@@ -1,5 +1,5 @@
 # node-egitimi-movie-api
-Mehmet Seven'in Udemy üzerinde yayınlanan <a href="https://www.udemy.com/nodejs-egitimi/?couponCode=NDJS49MS" target="_blank">"Sıfırdan Her Yönüyle Node.JS"</a> adlı eğitim setinde "Express ve MongoDB ile Restful API Geliştirme Projesi" bölümünde kullanılan Movie API reposudur.
+Mehmet Seven'in Udemy üzerinde yayınlanan <a href="https://www.udemy.com/nodejs-egitimi/?couponCode=NDJS49MS" target="_blank">"Sıfırdan Her Yönüyle Node.JS"</a> adlı eğitim setinde "Express ve MongoDB ile Restful API Geliştirme Projesi" bölümünde kullanılan Movie API reposudur. Eğitim amacıyla uygulanmıştır.
 
 # Movies
  
