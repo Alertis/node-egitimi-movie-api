@@ -15,4 +15,51 @@ router.post('/', (req, res, next) =>{
     })
 });
 
+
+router.get('/',(req,res)=>{
+    const promise = Director.aggregate([
+        {
+            $lookup: {
+                from:'movies',
+                localField:'_id',
+                foreignField:'director_id',
+                as:'movies'
+            }
+        },
+        {
+            $unwind:{
+                path:'$movies',
+                preserveNullAndEmptyArrays: true
+            }
+        },
+        {
+            $group:{
+                _id:{
+                    _id:'$id',
+                    name:'$name',
+                    surname:'$surname',
+                    bio:'$bio'
+                },
+                movies:{
+                    $push:'$movies'
+                }
+            }
+        },
+        {
+            $project:{
+               _id:'$_id.id',
+               name:'$_id.name',
+               surname:'$_id.surname',
+               movies:'$movies'
+            }
+        }
+    ]);
+
+    promise.then((data)=>{
+        res.json(data);
+    }).catch((error)=>{
+        res.json(error);
+    });
+});
+
 module.exports = router;
