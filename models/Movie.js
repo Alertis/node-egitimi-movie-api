@@ -5,7 +5,9 @@ const MovieSchema=new Schema({
     director_id: Schema.Types.ObjectId,
     title:{
         type: String,
-        required: true
+        required: [true,'{PATH} is required' ],
+        maxlength:[15, '{PATH} must be less then {MAXLENGTH} characters'],
+        minlength:[1, '{PATH} must be long then {MINLENGTH} characters'],
     },
     category: String,
     country: String,
